@@ -52,7 +52,7 @@ Creation of various objects and fields.
         guessedLetters.setText("Du har gættet på: ");
 
         et = (EditText) findViewById(R.id.editTextGuess);
-        et.setText("Gæt på et bogstav her!");
+        et.setHint("Gæt på et bogstav her!");
 
         buttonGuess = (Button) findViewById(R.id.buttonGuess);
         buttonGuess.setOnClickListener(this);
@@ -78,12 +78,11 @@ onClick method to check which button was pressed.
             gameLogic.gætBogstav(bogstavGæt);
         }
         if (v == buttonBackToMenu){
-            Intent i = new Intent (this, MainActivity.class);
-            startActivity(i);
+            finish();
         }
         if (v == buttonReset){
             gameLogic.nulstil();
-            et.setText("Gæt på et bogstav her!");
+            et.setHint("Gæt på et bogstav her!");
             buttonGuess.setEnabled(true);
             buttonGuess.setBackgroundColor(Color.BLACK);
         }

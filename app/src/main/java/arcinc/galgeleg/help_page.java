@@ -21,8 +21,7 @@ public class help_page extends AppCompatActivity implements View.OnClickListener
 
     public void onClick (View v){
         if (v == buttonBack){
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+            finish();
         }
     }
 }
