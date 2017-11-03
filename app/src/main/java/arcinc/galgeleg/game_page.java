@@ -1,6 +1,5 @@
 package arcinc.galgeleg;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +24,7 @@ public class game_page extends AppCompatActivity implements View.OnClickListener
     Galgelogik gameLogic = new Galgelogik();
 /*
 Note that the reason for the extra forkert6.png object is that without it, the app would crash due to
-an outOfBounds exception thrown because of a slightly faulty cocunter in the getBrugteBogstaver method.
+an outOfBounds exception thrown because of a slightly faulty counter in the getBrugteBogstaver method.
  */
     private static int [] hangPic = {
         R.drawable.galge,
