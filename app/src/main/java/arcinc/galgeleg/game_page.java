@@ -107,7 +107,7 @@ Method to update the screen after the user's done interacting with the buttons.
             buttonGuess.setBackgroundColor(Color.GRAY);
         }
         if (gameLogic.erSpilletTabt()){
-            info.setText("Spillet er tabt, det rigtige ord er: " + gameLogic.getOrdet());
+            info.setText("Spillet er tabt, det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
             buttonGuess.setEnabled(false);
             buttonGuess.setBackgroundColor(Color.GRAY);
         }
