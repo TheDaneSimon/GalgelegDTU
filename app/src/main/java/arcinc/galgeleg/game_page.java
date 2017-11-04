@@ -82,6 +82,7 @@ onClick method to check which button was pressed.
         if (v == buttonReset){
             gameLogic.nulstil();
             et.setHint("Gæt på et bogstav her!");
+            et.setEnabled(true);
             buttonGuess.setEnabled(true);
             buttonGuess.setBackgroundColor(Color.BLACK);
         }
@@ -102,12 +103,16 @@ Method to update the screen after the user's done interacting with the buttons.
         }
 
         if (gameLogic.erSpilletVundet()){
-            info.setText("Tillykke! Du har vundet!");
+            info.setText("Tillykke! Du har vundet! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            et.setEnabled(false);
+            et.setText("Spillet er slut.");
             buttonGuess.setEnabled(false);
             buttonGuess.setBackgroundColor(Color.GRAY);
         }
         if (gameLogic.erSpilletTabt()){
-            info.setText("Spillet er tabt, det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            info.setText("Desværre! Du har tabt! \n Det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            et.setEnabled(false);
+            et.setText("Spillet er slut.");
             buttonGuess.setEnabled(false);
             buttonGuess.setBackgroundColor(Color.GRAY);
         }
