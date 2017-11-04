@@ -109,6 +109,7 @@ Method to update the screen after the user's done interacting with the buttons.
             info.setText("Tillykke! Du har vundet! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
             et.setEnabled(false);
             et.setText("Spillet er slut.");
+            guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
             buttonGuess.setEnabled(false);
             buttonGuess.setBackgroundColor(Color.GRAY);
         }
@@ -116,6 +117,7 @@ Method to update the screen after the user's done interacting with the buttons.
             info.setText("Desværre! Du har tabt! \n Det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
             et.setEnabled(false);
             et.setText("Spillet er slut.");
+            guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
             buttonGuess.setEnabled(false);
             buttonGuess.setBackgroundColor(Color.GRAY);
         }

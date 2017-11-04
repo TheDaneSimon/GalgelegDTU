@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9E9E9E">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/galge" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:columnCount="6"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971">
+
+        <Button
+            android:layout_column="0"
+            android:id="@+id/buttonA"
+            android:text="A"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonB"
+            android:text="B"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonC"
+            android:text="C"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonD"
+            android:text="D"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonE"
+            android:text="E"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonF"
+            android:text="F"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonG"
+            android:text="G"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonH"
+            android:text="H"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+        <Button
+            android:id="@+id/buttonI"
+            android:text="I"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonJ"
+            android:text="J"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonK"
+            android:text="K"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonL"
+            android:text="L"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonM"
+            android:text="M"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonN"
+            android:text="N"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonO"
+            android:text="O"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonP"
+            android:text="P"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonQ"
+            android:text="Q"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonR"
+            android:text="R"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonS"
+            android:text="S"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonT"
+            android:text="T"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonU"
+            android:text="U"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonV"
+            android:text="V"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonW"
+            android:text="W"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+
+        <Button
+            android:id="@+id/buttonX"
+            android:text="X"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonY"
+            android:text="Y"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonZ"
+            android:text="Z"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonÆ"
+            android:text="Æ"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonØ"
+            android:text="Ø"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+        <Button
+            android:id="@+id/buttonÅ"
+            android:text="Å"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+
+    </GridLayout>
+
+
+</android.support.constraint.ConstraintLayout>
