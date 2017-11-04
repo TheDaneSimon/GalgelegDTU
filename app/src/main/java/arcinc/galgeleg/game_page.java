@@ -71,7 +71,10 @@ onClick method to check which button was pressed.
     public void onClick(View v) {
         if (v == buttonGuess) {
             String bogstavGæt = et.getText().toString();
-            if (bogstavGæt.length() != 1) {
+            if (bogstavGæt.length() == 0) {
+                Toast.makeText(this, "Indsæt éet bogstav", Toast.LENGTH_SHORT).show();
+            }
+            else if (bogstavGæt.length() != 1){
                 Toast.makeText(this, "Indsæt kun ét bogstav", Toast.LENGTH_SHORT).show();
             }
             gameLogic.gætBogstav(bogstavGæt);
