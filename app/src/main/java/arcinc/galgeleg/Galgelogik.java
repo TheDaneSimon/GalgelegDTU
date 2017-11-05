@@ -139,6 +139,7 @@ public class Galgelogik {
   }
 
 
+
   public void hentOrdFraDr() throws Exception {
     String data = hentUrl("https://dr.dk");
     //System.out.println("data = " + data);
