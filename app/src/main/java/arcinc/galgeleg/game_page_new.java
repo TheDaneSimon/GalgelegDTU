@@ -19,7 +19,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
-            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ;
+            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord;
+            ;
     private ImageView hangStatus;
     Galgelogik gameLogic = new Galgelogik();
 /*
@@ -46,9 +47,6 @@ Creation of various objects and fields.
 
         info = (TextView) findViewById(R.id.textViewInfo);
         info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
-
-        guessedLetters = (TextView) findViewById(R.id.textViewGuessedLetters);
-        guessedLetters.setText("Du har gættet på: ");
 
         buttonA = (Button) findViewById(R.id.buttonA);buttonB = (Button) findViewById(R.id.buttonB);
         buttonC = (Button) findViewById(R.id.buttonC);buttonD = (Button) findViewById(R.id.buttonD);
@@ -81,6 +79,14 @@ Creation of various objects and fields.
         buttonY.setOnClickListener(this);buttonZ.setOnClickListener(this);
         buttonÆ.setOnClickListener(this);buttonØ.setOnClickListener(this);
         buttonÅ.setOnClickListener(this);
+
+        buttonExit = (Button) findViewById(R.id.buttonExit);
+        buttonExit.setOnClickListener(this);
+        buttonExit.setText("Afslut spil");
+
+        buttonNewWord = (Button) findViewById(R.id.buttonNewWord);
+        buttonNewWord.setOnClickListener(this);
+        buttonNewWord.setText("Nyt ord");
 
         hangStatus = (ImageView) findViewById(R.id.imageViewHangStatus);
 
@@ -239,6 +245,70 @@ onClick method to check which button was pressed.
                 buttonA.setEnabled(false);
                 buttonA.setBackgroundColor(Color.GRAY);
                 break;
+            case R.id.buttonExit:
+                finish();
+                break;
+            case R.id.buttonNewWord:
+                gameLogic.nulstil();
+
+                buttonA.setEnabled(true);
+                buttonA.setBackgroundColor(Color.BLACK);
+                buttonB.setEnabled(true);
+                buttonB.setBackgroundColor(Color.BLACK);
+                buttonC.setEnabled(true);
+                buttonC.setBackgroundColor(Color.BLACK);
+                buttonD.setEnabled(true);
+                buttonD.setBackgroundColor(Color.BLACK);
+                buttonE.setEnabled(true);
+                buttonE.setBackgroundColor(Color.BLACK);
+                buttonF.setEnabled(true);
+                buttonF.setBackgroundColor(Color.BLACK);
+                buttonG.setEnabled(true);
+                buttonG.setBackgroundColor(Color.BLACK);
+                buttonH.setEnabled(true);
+                buttonH.setBackgroundColor(Color.BLACK);
+                buttonI.setEnabled(true);
+                buttonI.setBackgroundColor(Color.BLACK);
+                buttonJ.setEnabled(true);
+                buttonJ.setBackgroundColor(Color.BLACK);
+                buttonK.setEnabled(true);
+                buttonK.setBackgroundColor(Color.BLACK);
+                buttonL.setEnabled(true);
+                buttonL.setBackgroundColor(Color.BLACK);
+                buttonM.setEnabled(true);
+                buttonM.setBackgroundColor(Color.BLACK);
+                buttonN.setEnabled(true);
+                buttonN.setBackgroundColor(Color.BLACK);
+                buttonO.setEnabled(true);
+                buttonO.setBackgroundColor(Color.BLACK);
+                buttonP.setEnabled(true);
+                buttonP.setBackgroundColor(Color.BLACK);
+                buttonQ.setEnabled(true);
+                buttonQ.setBackgroundColor(Color.BLACK);
+                buttonR.setEnabled(true);
+                buttonR.setBackgroundColor(Color.BLACK);
+                buttonS.setEnabled(true);
+                buttonS.setBackgroundColor(Color.BLACK);
+                buttonT.setEnabled(true);
+                buttonT.setBackgroundColor(Color.BLACK);
+                buttonU.setEnabled(true);
+                buttonU.setBackgroundColor(Color.BLACK);
+                buttonV.setEnabled(true);
+                buttonV.setBackgroundColor(Color.BLACK);
+                buttonW.setEnabled(true);
+                buttonW.setBackgroundColor(Color.BLACK);
+                buttonX.setEnabled(true);
+                buttonX.setBackgroundColor(Color.BLACK);
+                buttonY.setEnabled(true);
+                buttonY.setBackgroundColor(Color.BLACK);
+                buttonZ.setEnabled(true);
+                buttonZ.setBackgroundColor(Color.BLACK);
+                buttonÆ.setEnabled(true);
+                buttonÆ.setBackgroundColor(Color.BLACK);
+                buttonØ.setEnabled(true);
+                buttonØ.setBackgroundColor(Color.BLACK);
+                buttonÅ.setEnabled(true);
+                buttonÅ.setBackgroundColor(Color.BLACK);
 
         }
 
