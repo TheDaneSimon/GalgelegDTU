@@ -105,7 +105,7 @@ public class Galgelogik {
     } else {
       // Vi gættede på et bogstav der ikke var i ordet.
       sidsteBogstavVarKorrekt = false;
-      System.out.println("Bogstavet var IKKE korrekt: " + bogstav + " " +ordet);
+      System.out.println("Bogstavet var IKKE korrekt: " + bogstav);
       antalForkerteBogstaver = antalForkerteBogstaver + 1;
       if (antalForkerteBogstaver > 6) {
         spilletErTabt = true;

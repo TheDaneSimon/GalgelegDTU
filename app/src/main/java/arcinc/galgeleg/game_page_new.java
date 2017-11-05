@@ -1,8 +1,8 @@
 package arcinc.galgeleg;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,14 +13,14 @@ import android.widget.TextView;
  * Created by Mads Stege on 22-10-2017.
  */
 
-public class game_page_new extends AppCompatActivity implements View.OnClickListener {
+public class game_page_new extends Activity implements View.OnClickListener {
 
     private TextView info;
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
             buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord;
-            ;
+
     private ImageView hangStatus;
     Galgelogik gameLogic = new Galgelogik();
 /*
@@ -91,6 +91,7 @@ Creation of various objects and fields.
         buttonNewWord.setText("Nyt ord");
 
         hangStatus = (ImageView) findViewById(R.id.imageViewHangStatus);
+        hangStatus.setImageResource(R.drawable.galge);
 
 
     }
@@ -252,7 +253,6 @@ onClick method to check which button was pressed.
                 break;
             case R.id.buttonNewWord:
                 gameLogic.nulstil();
-
                 buttonA.setEnabled(true);
                 buttonA.setBackgroundColor(Color.BLACK);
                 buttonB.setEnabled(true);
@@ -326,10 +326,10 @@ Method to update the screen after the user's done interacting with the buttons.
             hangStatus.setImageResource(hangPic[R.drawable.forkert6]);
         }
         if (gameLogic.erSpilletVundet()){
-            info.setText("Tillykke! Du har vundet! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            info.setText("Du gættede rigtigt! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
         }
         if (gameLogic.erSpilletTabt()){
-            info.setText("Desværre! Du har tabt! \n Det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            info.setText("Du har tabt! \n Ordet var: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
 
         }
     }

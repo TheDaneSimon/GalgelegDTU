@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageViewHangStatus"
-        android:layout_width="99dp"
-        android:layout_height="126dp"
+        android:layout_width="132dp"
+        android:layout_height="205dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -21,29 +21,13 @@
         app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/galge" />
 
-    <TextView
-        android:id="@+id/textViewInfo"
-        android:layout_width="174dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="288dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="TempText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <GridLayout
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:columnCount="8"
         android:orientation="horizontal"
-        android:columnCount="6"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,237 +36,238 @@
         app:layout_constraintVertical_bias="0.971">
 
         <Button
-            android:layout_column="0"
             android:id="@+id/buttonA"
-            android:text="A"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:layout_column="0"
+            android:background="#000"
+            android:text="A"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonB"
-            android:text="B"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="B"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonC"
-            android:text="C"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="C"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonD"
-            android:text="D"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="D"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonE"
-            android:text="E"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="E"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonF"
-            android:text="F"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="F"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonG"
-            android:text="G"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="G"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonH"
-            android:text="H"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="H"
+            android:textColor="#FFFFFF" />
+
         <Button
             android:id="@+id/buttonI"
-            android:text="I"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="I"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonJ"
-            android:text="J"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="J"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonK"
-            android:text="K"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="K"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonL"
-            android:text="L"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="L"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonM"
-            android:text="M"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="M"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonN"
-            android:text="N"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="N"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonO"
-            android:text="O"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="O"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonP"
-            android:text="P"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="P"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonQ"
-            android:text="Q"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Q"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonR"
-            android:text="R"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="R"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonS"
-            android:text="S"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="S"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonT"
-            android:text="T"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="T"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonU"
-            android:text="U"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="U"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonV"
-            android:text="V"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="V"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonW"
-            android:text="W"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="W"
+            android:textColor="#FFFFFF" />
 
 
         <Button
             android:id="@+id/buttonX"
-            android:text="X"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="X"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonY"
-            android:text="Y"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Y"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonZ"
-            android:text="Z"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Z"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonÆ"
-            android:text="Æ"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Æ"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonØ"
-            android:text="Ø"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Ø"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/buttonÅ"
-            android:text="Å"
-            android:textColor="#FFFFFF"
-            android:background="#000"
             android:layout_width="45dp"
-            android:layout_height="45dp"/>
+            android:layout_height="45dp"
+            android:background="#000"
+            android:text="Å"
+            android:textColor="#FFFFFF" />
 
     </GridLayout>
 
@@ -294,9 +279,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#000"
         android:text="TempText"
         android:textColor="#FFFFFF"
-        android:background="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.724"
@@ -312,14 +297,29 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#000"
         android:text="TempText"
         android:textColor="#FFFFFF"
-        android:background="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.105" />
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="359dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="228dp"
+        android:gravity="center"
+        android:text="TempText"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
