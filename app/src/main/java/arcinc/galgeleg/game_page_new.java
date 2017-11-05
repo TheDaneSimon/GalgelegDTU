@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class game_page_new extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView info, guessedLetters;
+    private TextView info;
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
@@ -43,7 +43,9 @@ Creation of various objects and fields.
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_page);
+        setContentView(R.layout.activity_game_page_new);
+
+        String bogstavGæt;
 
         info = (TextView) findViewById(R.id.textViewInfo);
         info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
@@ -95,155 +97,155 @@ Creation of various objects and fields.
 /*
 onClick method to check which button was pressed.
  */
-
     @Override
     public void onClick(View v) {
-
         switch(v.getId()){
             case R.id.buttonA:
-                gameLogic.gætBogstav("A");
+                gameLogic.gætBogstav("a");
                 buttonA.setEnabled(false);
                 buttonA.setBackgroundColor(Color.GRAY);
+                updateScreen();
                 break;
             case R.id.buttonB:
-                gameLogic.gætBogstav("B");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("b");
+                buttonB.setEnabled(false);
+                buttonB.setBackgroundColor(Color.GRAY);
+                updateScreen();
                 break;
             case R.id.buttonC:
-                gameLogic.gætBogstav("C");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("c");
+                buttonC.setEnabled(false);
+                buttonC.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonD:
-                gameLogic.gætBogstav("D");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("d");
+                buttonD.setEnabled(false);
+                buttonD.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonE:
-                gameLogic.gætBogstav("E");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("e");
+                buttonE.setEnabled(false);
+                buttonE.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonF:
-                gameLogic.gætBogstav("F");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("f");
+                buttonF.setEnabled(false);
+                buttonF.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonG:
-                gameLogic.gætBogstav("G");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("g");
+                buttonG.setEnabled(false);
+                buttonG.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonH:
-                gameLogic.gætBogstav("H");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("h");
+                buttonH.setEnabled(false);
+                buttonH.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonI:
-                gameLogic.gætBogstav("I");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("i");
+                buttonI.setEnabled(false);
+                buttonI.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonJ:
-                gameLogic.gætBogstav("J");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("j");
+                buttonJ.setEnabled(false);
+                buttonJ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonK:
-                gameLogic.gætBogstav("K");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("k");
+                buttonK.setEnabled(false);
+                buttonK.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonL:
-                gameLogic.gætBogstav("L");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("l");
+                buttonL.setEnabled(false);
+                buttonL.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonM:
-                gameLogic.gætBogstav("M");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("m");
+                buttonM.setEnabled(false);
+                buttonM.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonN:
-                gameLogic.gætBogstav("N");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("n");
+                buttonN.setEnabled(false);
+                buttonN.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonO:
-                gameLogic.gætBogstav("O");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("o");
+                buttonO.setEnabled(false);
+                buttonO.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonP:
-                gameLogic.gætBogstav("P");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("p");
+                buttonP.setEnabled(false);
+                buttonP.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonQ:
-                gameLogic.gætBogstav("Q");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("q");
+                buttonQ.setEnabled(false);
+                buttonQ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonR:
-                gameLogic.gætBogstav("R");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("r");
+                buttonR.setEnabled(false);
+                buttonR.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonS:
-                gameLogic.gætBogstav("S");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("s");
+                buttonS.setEnabled(false);
+                buttonS.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonT:
-                gameLogic.gætBogstav("T");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("t");
+                buttonT.setEnabled(false);
+                buttonT.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonU:
-                gameLogic.gætBogstav("U");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("u");
+                buttonU.setEnabled(false);
+                buttonU.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonV:
-                gameLogic.gætBogstav("V");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("v");
+                buttonV.setEnabled(false);
+                buttonV.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonW:
-                gameLogic.gætBogstav("W");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("w");
+                buttonW.setEnabled(false);
+                buttonW.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonX:
-                gameLogic.gætBogstav("X");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("x");
+                buttonX.setEnabled(false);
+                buttonX.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonY:
-                gameLogic.gætBogstav("Y");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("y");
+                buttonY.setEnabled(false);
+                buttonY.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonZ:
-                gameLogic.gætBogstav("Z");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("z");
+                buttonZ.setEnabled(false);
+                buttonZ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonÆ:
-                gameLogic.gætBogstav("Æ");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("æ");
+                buttonÆ.setEnabled(false);
+                buttonÆ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonØ:
-                gameLogic.gætBogstav("Ø");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("ø");
+                buttonØ.setEnabled(false);
+                buttonØ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonÅ:
-                gameLogic.gætBogstav("Å");
-                buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                gameLogic.gætBogstav("å");
+                buttonÅ.setEnabled(false);
+                buttonÅ.setBackgroundColor(Color.GRAY);
                 break;
             case R.id.buttonExit:
                 finish();
@@ -309,9 +311,7 @@ onClick method to check which button was pressed.
                 buttonØ.setBackgroundColor(Color.BLACK);
                 buttonÅ.setEnabled(true);
                 buttonÅ.setBackgroundColor(Color.BLACK);
-
         }
-
         updateScreen();
     }
 /*
@@ -319,21 +319,17 @@ Method to update the screen after the user's done interacting with the buttons.
  */
     private void updateScreen() {
         info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
-        guessedLetters.setText("Du har gættet på: " + gameLogic.getBrugteBogstaver());
 
         try {
             hangStatus.setImageResource(hangPic[gameLogic.getAntalForkerteBogstaver()]);
         } catch (Exception e) {
             hangStatus.setImageResource(hangPic[R.drawable.forkert6]);
         }
-
         if (gameLogic.erSpilletVundet()){
             info.setText("Tillykke! Du har vundet! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
-               guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
         }
         if (gameLogic.erSpilletTabt()){
             info.setText("Desværre! Du har tabt! \n Det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
-            guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
 
         }
     }

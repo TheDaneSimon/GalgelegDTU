@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".help_page"></activity>
-        <activity android:name=".game_page"></activity>
+        <activity android:name=".game_page_new"></activity>
     </application>
 
 </manifest>

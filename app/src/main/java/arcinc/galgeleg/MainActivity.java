@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick (View v) {
 
         if (v == buttonStart){
-            Intent i = new Intent(this, game_page.class);
+            Intent i = new Intent(this, game_page_new.class);
             startActivity(i);
         }
 
