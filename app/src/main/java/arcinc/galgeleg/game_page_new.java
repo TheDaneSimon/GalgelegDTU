@@ -199,7 +199,7 @@ onClick method to check which button was pressed.
                 if (gameLogic.getOrdet().contains("k")){
                     buttonK.setBackgroundColor(Color.GREEN);
                 } else {
-                    buttonB.setBackgroundColor(Color.RED);
+                    buttonK.setBackgroundColor(Color.RED);
                 }
                 break;
             case R.id.buttonL:
