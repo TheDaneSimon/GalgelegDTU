@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 public class Galgelogik {
+
   private ArrayList<String> muligeOrd = new ArrayList<String>();
   private String ordet;
   private ArrayList<String> brugteBogstaver = new ArrayList<String>();

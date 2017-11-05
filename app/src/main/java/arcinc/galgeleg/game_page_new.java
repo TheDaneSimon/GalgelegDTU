@@ -104,149 +104,265 @@ onClick method to check which button was pressed.
             case R.id.buttonA:
                 gameLogic.gætBogstav("a");
                 buttonA.setEnabled(false);
-                buttonA.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("a")){
+                    buttonA.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonA.setBackgroundColor(Color.RED);
+                }
                 updateScreen();
                 break;
             case R.id.buttonB:
                 gameLogic.gætBogstav("b");
                 buttonB.setEnabled(false);
-                buttonB.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("b")){
+                    buttonB.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonB.setBackgroundColor(Color.RED);
+                }
                 updateScreen();
                 break;
             case R.id.buttonC:
                 gameLogic.gætBogstav("c");
                 buttonC.setEnabled(false);
-                buttonC.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("c")){
+                    buttonC.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonC.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonD:
                 gameLogic.gætBogstav("d");
                 buttonD.setEnabled(false);
-                buttonD.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("d")){
+                    buttonD.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonD.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonE:
                 gameLogic.gætBogstav("e");
                 buttonE.setEnabled(false);
-                buttonE.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("e")){
+                    buttonE.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonE.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonF:
                 gameLogic.gætBogstav("f");
                 buttonF.setEnabled(false);
-                buttonF.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("f")){
+                    buttonF.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonF.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonG:
                 gameLogic.gætBogstav("g");
                 buttonG.setEnabled(false);
-                buttonG.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("g")){
+                    buttonG.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonG.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonH:
                 gameLogic.gætBogstav("h");
                 buttonH.setEnabled(false);
-                buttonH.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("h")){
+                    buttonH.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonH.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonI:
                 gameLogic.gætBogstav("i");
                 buttonI.setEnabled(false);
-                buttonI.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("i")){
+                    buttonI.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonI.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonJ:
                 gameLogic.gætBogstav("j");
                 buttonJ.setEnabled(false);
-                buttonJ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("j")){
+                    buttonJ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonJ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonK:
                 gameLogic.gætBogstav("k");
                 buttonK.setEnabled(false);
-                buttonK.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("k")){
+                    buttonK.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonB.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonL:
                 gameLogic.gætBogstav("l");
                 buttonL.setEnabled(false);
-                buttonL.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("l")){
+                    buttonL.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonL.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonM:
                 gameLogic.gætBogstav("m");
                 buttonM.setEnabled(false);
-                buttonM.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("m")){
+                    buttonM.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonM.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonN:
                 gameLogic.gætBogstav("n");
                 buttonN.setEnabled(false);
-                buttonN.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("n")){
+                    buttonN.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonN.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonO:
                 gameLogic.gætBogstav("o");
                 buttonO.setEnabled(false);
-                buttonO.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("o")){
+                    buttonO.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonO.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonP:
                 gameLogic.gætBogstav("p");
                 buttonP.setEnabled(false);
-                buttonP.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("p")){
+                    buttonP.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonP.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonQ:
                 gameLogic.gætBogstav("q");
                 buttonQ.setEnabled(false);
-                buttonQ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("q")){
+                    buttonQ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonQ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonR:
                 gameLogic.gætBogstav("r");
                 buttonR.setEnabled(false);
-                buttonR.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("r")){
+                    buttonR.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonR.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonS:
                 gameLogic.gætBogstav("s");
                 buttonS.setEnabled(false);
-                buttonS.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("s")){
+                    buttonS.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonS.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonT:
                 gameLogic.gætBogstav("t");
                 buttonT.setEnabled(false);
-                buttonT.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("t")){
+                    buttonT.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonT.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonU:
                 gameLogic.gætBogstav("u");
                 buttonU.setEnabled(false);
-                buttonU.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("u")){
+                    buttonU.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonU.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonV:
                 gameLogic.gætBogstav("v");
                 buttonV.setEnabled(false);
-                buttonV.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("v")){
+                    buttonV.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonV.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonW:
                 gameLogic.gætBogstav("w");
                 buttonW.setEnabled(false);
-                buttonW.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("w")){
+                    buttonW.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonW.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonX:
                 gameLogic.gætBogstav("x");
                 buttonX.setEnabled(false);
-                buttonX.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("x")){
+                    buttonX.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonX.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonY:
                 gameLogic.gætBogstav("y");
                 buttonY.setEnabled(false);
-                buttonY.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("y")){
+                    buttonY.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonY.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonZ:
                 gameLogic.gætBogstav("z");
                 buttonZ.setEnabled(false);
-                buttonZ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("z")){
+                    buttonZ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonZ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonÆ:
                 gameLogic.gætBogstav("æ");
                 buttonÆ.setEnabled(false);
-                buttonÆ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("æ")){
+                    buttonÆ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonÆ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonØ:
                 gameLogic.gætBogstav("ø");
                 buttonØ.setEnabled(false);
-                buttonØ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("ø")){
+                    buttonØ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonØ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonÅ:
                 gameLogic.gætBogstav("å");
                 buttonÅ.setEnabled(false);
-                buttonÅ.setBackgroundColor(Color.GRAY);
+                if (gameLogic.getOrdet().contains("å")){
+                    buttonÅ.setBackgroundColor(Color.GREEN);
+                } else {
+                    buttonÅ.setBackgroundColor(Color.RED);
+                }
                 break;
             case R.id.buttonExit:
                 finish();
