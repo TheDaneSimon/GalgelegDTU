@@ -21,6 +21,7 @@
         app:srcCompat="@drawable/galge" />
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
