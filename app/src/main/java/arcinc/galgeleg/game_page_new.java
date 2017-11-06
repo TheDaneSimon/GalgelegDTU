@@ -2,6 +2,7 @@ package arcinc.galgeleg;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,19 +17,20 @@ import android.widget.TextView;
 
 public class game_page_new extends Activity implements View.OnClickListener {
 
-    private TextView info;
+    private TextView textViewInfo;
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
             buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord,
             buttonDRGet;
 
+    AsyncTask asyncTaskDR;
+
     private ImageView hangStatus;
 
-    private GridLayout gridLayout;
+    private GridLayout gridLayoutButtons;
 
     Galgelogik gameLogic = new Galgelogik();
-    DownloadOrd downloadOrd = new DownloadOrd();
 /*
 Note that the reason for the extra forkert6.png object is that without it, the app would crash due to
 an outOfBounds exception thrown because of a slightly faulty counter in the getBrugteBogstaver method.
@@ -51,8 +53,8 @@ Creation of various objects and fields.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_page_new);
 
-        info = (TextView) findViewById(R.id.textViewInfo);
-        info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
+        textViewInfo = (TextView) findViewById(R.id.textViewInfo);
+        textViewInfo.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
 
         buttonA = (Button) findViewById(R.id.buttonA);buttonB = (Button) findViewById(R.id.buttonB);
         buttonC = (Button) findViewById(R.id.buttonC);buttonD = (Button) findViewById(R.id.buttonD);
@@ -101,7 +103,7 @@ Creation of various objects and fields.
         hangStatus = (ImageView) findViewById(R.id.imageViewHangStatus);
         hangStatus.setImageResource(R.drawable.galge);
 
-        gridLayout = (GridLayout) findViewById(R.id.gridLayout);
+        gridLayoutButtons = (GridLayout) findViewById(R.id.gridLayout);
 
     }
 /*
@@ -115,14 +117,23 @@ onClick method to check which button was pressed.
         }
 
         else if (v == buttonDRGet){
-            downloadOrd.execute("");
-            try {
-                Thread.sleep(3500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            gameLogic = downloadOrd.galgelogik;
-            System.out.println(gameLogic.getOrdet());
+            class asyncTaskDR extends AsyncTask{
+                @Override
+                protected Object doInBackground(Object[] objects) {
+                    try {
+                        gameLogic.hentOrdFraDr();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+                @Override
+                protected void onPostExecute(Object result) {
+                    buttonDRGet.setText("OK");
+                    buttonDRGet.setEnabled(false);
+                    buttonDRGet.setBackgroundColor(Color.GRAY);
+                }
+            }new asyncTaskDR().execute();
         }
 
         else if (v == buttonNewWord){
@@ -147,16 +158,16 @@ onClick method to check which button was pressed.
 Method to reset the UI of the app
 */
     private void uiReset() {
-        for (int i = 0; i < gridLayout.getChildCount(); i++){
-            gridLayout.getChildAt(i).setBackgroundColor(Color.BLACK);
-            gridLayout.getChildAt(i).setEnabled(true);
+        for (int i = 0; i < gridLayoutButtons.getChildCount(); i++){
+            gridLayoutButtons.getChildAt(i).setBackgroundColor(Color.BLACK);
+            gridLayoutButtons.getChildAt(i).setEnabled(true);
         }
     }
 /*
 Method to update the screen after the user's done interacting with the buttons.
 */
     private void updateScreen() {
-        info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
+        textViewInfo.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
 
         try {
             hangStatus.setImageResource(hangPic[gameLogic.getAntalForkerteBogstaver()]);
@@ -164,12 +175,12 @@ Method to update the screen after the user's done interacting with the buttons.
             hangStatus.setImageResource(hangPic[R.drawable.forkert6]);
         }
         if (gameLogic.erSpilletVundet()){
-            info.setText("Du gættede rigtigt! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            textViewInfo.setText("Du gættede rigtigt! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
         }
         if (gameLogic.erSpilletTabt()) {
-            info.setText("Du har tabt! \n Ordet var: " + gameLogic.getOrdet().substring(0, 1).toUpperCase() + gameLogic.getOrdet().substring(1));
-            for (int i = 0; i < gridLayout.getChildCount(); i++) {
-                gridLayout.getChildAt(i).setEnabled(false);
+            textViewInfo.setText("Du har tabt! \n Ordet var: " + gameLogic.getOrdet().substring(0, 1).toUpperCase() + gameLogic.getOrdet().substring(1));
+            for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
+                gridLayoutButtons.getChildAt(i).setEnabled(false);
             }
         }
     }
