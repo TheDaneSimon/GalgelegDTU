@@ -21,7 +21,7 @@ public class game_page_new extends Activity implements View.OnClickListener {
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
             buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord,
-            buttonDrGet;
+            buttonDRGet;
 
     private ImageView hangStatus;
 
@@ -45,7 +45,7 @@ an outOfBounds exception thrown because of a slightly faulty counter in the getB
     };
 /*
 Creation of various objects and fields.
- */
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -94,9 +94,9 @@ Creation of various objects and fields.
         buttonNewWord.setOnClickListener(this);
         buttonNewWord.setText("Nyt ord");
 
-        buttonDrGet = (Button) findViewById(R.id.buttonDrNewWords);
-        buttonDrGet.setOnClickListener(this);
-        buttonDrGet.setText("Hent ord fra DR");
+        buttonDRGet = (Button) findViewById(R.id.buttonDrNewWords);
+        buttonDRGet.setOnClickListener(this);
+        buttonDRGet.setText("DR");
 
         hangStatus = (ImageView) findViewById(R.id.imageViewHangStatus);
         hangStatus.setImageResource(R.drawable.galge);
@@ -114,7 +114,7 @@ onClick method to check which button was pressed.
             finish();
         }
 
-        else if (v == buttonDrGet){
+        else if (v == buttonDRGet){
             downloadOrd.execute("");
             try {
                 Thread.sleep(3500);
