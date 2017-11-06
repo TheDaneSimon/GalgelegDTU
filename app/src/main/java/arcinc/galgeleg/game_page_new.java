@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -23,8 +24,6 @@ public class game_page_new extends Activity implements View.OnClickListener {
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
             buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord,
             buttonDRGet;
-
-    AsyncTask asyncTaskDR;
 
     private ImageView hangStatus;
 
@@ -132,6 +131,7 @@ onClick method to check which button was pressed.
                     buttonDRGet.setText("OK");
                     buttonDRGet.setEnabled(false);
                     buttonDRGet.setBackgroundColor(Color.GRAY);
+                    Toast.makeText(game_page_new.this, "Hentede ord fra DR", Toast.LENGTH_SHORT).show();
                 }
             }new asyncTaskDR().execute();
         }
