@@ -9,9 +9,6 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 /**
  * Created by Mads Stege on 22-10-2017.
@@ -23,7 +20,8 @@ public class game_page_new extends Activity implements View.OnClickListener {
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
-            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord, buttonDrGet;
+            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord,
+            buttonDrGet;
 
     private ImageView hangStatus;
 
@@ -92,11 +90,11 @@ Creation of various objects and fields.
         buttonExit.setOnClickListener(this);
         buttonExit.setText("Afslut spil");
 
-        buttonNewWord = (Button) findViewById(R.id.buttonNewWord);
+        buttonNewWord = (Button) findViewById(R.id.buttonResetUI);
         buttonNewWord.setOnClickListener(this);
         buttonNewWord.setText("Nyt ord");
 
-        buttonDrGet = (Button) findViewById(R.id.buttonDrGet);
+        buttonDrGet = (Button) findViewById(R.id.buttonDrNewWords);
         buttonDrGet.setOnClickListener(this);
         buttonDrGet.setText("Hent ord fra DR");
 
@@ -125,13 +123,13 @@ onClick method to check which button was pressed.
             }
             gameLogic = downloadOrd.galgelogik;
             System.out.println(gameLogic.getOrdet());
-
         }
 
         else if (v == buttonNewWord){
             gameLogic.nulstil();
             uiReset();
         }
+
         else {
             Button b = (Button) v;
             gameLogic.gætBogstav(b.getText().toString().toLowerCase());
@@ -145,7 +143,9 @@ onClick method to check which button was pressed.
         updateScreen();
     }
 
-
+/*
+Method to reset the UI of the app
+*/
     private void uiReset() {
         for (int i = 0; i < gridLayout.getChildCount(); i++){
             gridLayout.getChildAt(i).setBackgroundColor(Color.BLACK);
@@ -154,7 +154,7 @@ onClick method to check which button was pressed.
     }
 /*
 Method to update the screen after the user's done interacting with the buttons.
- */
+*/
     private void updateScreen() {
         info.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
 

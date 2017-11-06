@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Galgeleg.iml" filepath="$PROJECT_DIR$/Galgeleg.iml" />
-      <module fileurl="file://C:\Users\Mads\AndroidStudioProjects\Projects\Galgeleg\GalgelegDTU.iml" filepath="C:\Users\Mads\AndroidStudioProjects\Projects\Galgeleg\GalgelegDTU.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GalgelegDTU.iml" filepath="$PROJECT_DIR$/GalgelegDTU.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
