@@ -23,7 +23,7 @@ public class game_page_new extends Activity implements View.OnClickListener {
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
-            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord;
+            buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord, buttonDrGet;
 
     private ImageView hangStatus;
 
@@ -96,6 +96,10 @@ Creation of various objects and fields.
         buttonNewWord.setOnClickListener(this);
         buttonNewWord.setText("Nyt ord");
 
+        buttonDrGet = (Button) findViewById(R.id.buttonDrGet);
+        buttonDrGet.setOnClickListener(this);
+        buttonDrGet.setText("Hent ord fra DR");
+
         hangStatus = (ImageView) findViewById(R.id.imageViewHangStatus);
         hangStatus.setImageResource(R.drawable.galge);
 
@@ -112,9 +116,7 @@ onClick method to check which button was pressed.
             finish();
         }
 
-        else if (v == buttonNewWord){
-            gameLogic.nulstil();
-            uiReset();
+        else if (v == buttonDrGet){
             downloadOrd.execute("");
             try {
                 Thread.sleep(3500);
@@ -123,6 +125,12 @@ onClick method to check which button was pressed.
             }
             gameLogic = downloadOrd.galgelogik;
             System.out.println(gameLogic.getOrdet());
+
+        }
+
+        else if (v == buttonNewWord){
+            gameLogic.nulstil();
+            uiReset();
         }
         else {
             Button b = (Button) v;
