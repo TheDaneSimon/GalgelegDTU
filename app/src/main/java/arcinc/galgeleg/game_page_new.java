@@ -132,6 +132,9 @@ onClick method to check which button was pressed.
                     buttonDRGet.setEnabled(false);
                     buttonDRGet.setBackgroundColor(Color.GRAY);
                     Toast.makeText(game_page_new.this, "Hentede ord fra DR", Toast.LENGTH_SHORT).show();
+                    gameLogic.nulstil();
+                    uiReset();
+                    updateScreen();
                 }
             }new asyncTaskDR().execute();
         }
