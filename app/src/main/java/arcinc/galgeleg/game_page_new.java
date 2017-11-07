@@ -1,9 +1,9 @@
 package arcinc.galgeleg;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -16,7 +16,7 @@ import android.widget.Toast;
  * Created by Mads Stege on 22-10-2017.
  */
 
-public class game_page_new extends Activity implements View.OnClickListener {
+public class game_page_new extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewInfo;
     private Button buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, buttonG,
@@ -30,10 +30,7 @@ public class game_page_new extends Activity implements View.OnClickListener {
     private GridLayout gridLayoutButtons;
 
     Galgelogik gameLogic = new Galgelogik();
-/*
-Note that the reason for the extra forkert6.png object is that without it, the app would crash due to
-an outOfBounds exception thrown because of a slightly faulty counter in the getBrugteBogstaver method.
- */
+
     private static int [] hangPic = {
         R.drawable.galge,
         R.drawable.forkert1,
@@ -41,7 +38,6 @@ an outOfBounds exception thrown because of a slightly faulty counter in the getB
         R.drawable.forkert3,
         R.drawable.forkert4,
         R.drawable.forkert5,
-        R.drawable.forkert6,
         R.drawable.forkert6
     };
 /*
@@ -116,6 +112,9 @@ onClick method to check which button was pressed.
         }
 
         else if (v == buttonDRGet){
+            buttonDRGet.setEnabled(false);
+            buttonDRGet.setBackgroundColor(Color.GRAY);
+
             class asyncTaskDR extends AsyncTask{
                 @Override
                 protected Object doInBackground(Object[] objects) {
@@ -129,8 +128,6 @@ onClick method to check which button was pressed.
                 @Override
                 protected void onPostExecute(Object result) {
                     buttonDRGet.setText("OK");
-                    buttonDRGet.setEnabled(false);
-                    buttonDRGet.setBackgroundColor(Color.GRAY);
                     Toast.makeText(game_page_new.this, "Hentede ord fra DR", Toast.LENGTH_SHORT).show();
                     gameLogic.nulstil();
                     uiReset();
@@ -179,6 +176,9 @@ Method to update the screen after the user's done interacting with the buttons.
         }
         if (gameLogic.erSpilletVundet()){
             textViewInfo.setText("Du gættede rigtigt! \n Dit ord var: "+gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
+            for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
+                gridLayoutButtons.getChildAt(i).setEnabled(false);
+            }
         }
         if (gameLogic.erSpilletTabt()) {
             textViewInfo.setText("Du har tabt! \n Ordet var: " + gameLogic.getOrdet().substring(0, 1).toUpperCase() + gameLogic.getOrdet().substring(1));
