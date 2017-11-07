@@ -33,7 +33,7 @@
         android:layout_marginTop="24dp"
         android:text="Whoopsies! Something went wrong!"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintLeft_toLeftOf="parent"

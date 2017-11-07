@@ -214,11 +214,13 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             intent.putExtra("GættetOrd", gættetOrd);
             startActivity(intent);
         }
-        if (gameLogic.erSpilletTabt()) {
+        else if (gameLogic.erSpilletTabt()) {
             hentDataOgRens();
-            for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
-                gridLayoutButtons.getChildAt(i).setEnabled(false);
-            }
+
+            Intent intent = new Intent(getApplicationContext(), game_page_lost.class);
+            intent.putExtra("AntalForkerte", antalForkerte);
+            intent.putExtra("GættetOrd", gættetOrd);
+            startActivity(intent);
         }
     }
 
@@ -234,5 +236,6 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         gameLogic.nulstil();
         hangStatus.setImageResource(hangPic[0]);
         updateScreen();
+
     }
 }

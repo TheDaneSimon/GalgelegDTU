@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by Mads on 07-11-2017.
  */
 
-public class game_page_won extends AppCompatActivity implements View.OnClickListener {
+public class game_page_lost extends AppCompatActivity implements View.OnClickListener {
 
 
     Button buttonBack;
@@ -23,7 +23,7 @@ public class game_page_won extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_won);
+        setContentView(R.layout.activity_game_lost);
 
         antalForkerte = getIntent().getIntExtra("AntalForkerte", 0);
         gættetOrd = getIntent().getStringExtra("GættetOrd");
@@ -33,14 +33,13 @@ public class game_page_won extends AppCompatActivity implements View.OnClickList
         buttonBack.setText("Tilbage");
 
         textViewInfo = (TextView) findViewById(R.id.textViewInfo);
-        textViewInfo.setText("Tillykke, du vandt spillet. \n" +
-                "Du gættede forkert " + antalForkerte + " gange i dit forsøg på at gætte ordet: \n" + gættetOrd);
+        textViewInfo.setText("Desværre, du tabte. \n" +
+                "Du gættede forkert 6 gange i dit forsøg på at gætte ordet: \n" + gættetOrd);
 
         imageViewHangPic = (ImageView) findViewById(R.id.imageViewHangPic);
-        imageViewHangPic.setImageResource(R.drawable.vandtpic);
+        imageViewHangPic.setImageResource(R.drawable.tabtpic);
 
     }
-
 
 
     @Override
