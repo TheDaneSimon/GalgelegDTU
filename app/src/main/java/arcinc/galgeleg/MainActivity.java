@@ -16,9 +16,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_main);
 
         buttonHelp = (Button) findViewById(R.id.buttonHelp);
         buttonHighScore = (Button) findViewById(R.id.buttonHighscore);

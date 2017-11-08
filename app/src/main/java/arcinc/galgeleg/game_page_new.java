@@ -55,9 +55,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_page_new);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_game_page_new);
 
         textViewInfo = (TextView) findViewById(R.id.textViewInfo);
         textViewInfo.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());

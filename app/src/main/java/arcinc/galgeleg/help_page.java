@@ -13,9 +13,8 @@ public class help_page extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_page);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_help_page);
 
         buttonBack = (Button) findViewById(R.id.buttonBack);
         buttonBack.setOnClickListener(this);

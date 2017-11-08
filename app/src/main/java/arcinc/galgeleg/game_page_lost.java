@@ -24,9 +24,9 @@ public class game_page_lost extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_game_lost);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         antalForkerte = getIntent().getIntExtra("AntalForkerte", 0);
         gættetOrd = getIntent().getStringExtra("GættetOrd");
