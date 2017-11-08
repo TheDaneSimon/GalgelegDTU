@@ -1,6 +1,7 @@
 package arcinc.galgeleg;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 /**
@@ -32,7 +35,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
     private String gættetOrd;
 
-    private int antalForkerte;
+    private Integer antalForkerte;
 
     Galgelogik gameLogic = new Galgelogik();
 
@@ -53,6 +56,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_page_new);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         textViewInfo = (TextView) findViewById(R.id.textViewInfo);
         textViewInfo.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
@@ -144,6 +149,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
         if (v == buttonExit) {
             finish();
+
         } else if (v == buttonDRGet) {
             buttonDRGet.setEnabled(false);
             buttonDRGet.setBackgroundColor(Color.GRAY);
@@ -169,6 +175,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                 }
             }
             new asyncTaskDR().execute();
+
         } else if (v == buttonNewWord) {
             gameLogic.nulstil();
             buttonReset();
@@ -185,15 +192,6 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         updateScreen();
     }
 
-    /*
-    Method to reset the buttons of the app
-    */
-    private void buttonReset() {
-        for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
-            gridLayoutButtons.getChildAt(i).setBackgroundColor(Color.BLACK);
-            gridLayoutButtons.getChildAt(i).setEnabled(true);
-        }
-    }
 
     /*
     Method to update the screen after the user's done interacting with the buttons.
@@ -213,8 +211,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             intent.putExtra("AntalForkerte", antalForkerte);
             intent.putExtra("GættetOrd", gættetOrd);
             startActivity(intent);
-        }
-        else if (gameLogic.erSpilletTabt()) {
+        } else if (gameLogic.erSpilletTabt()) {
             hentDataOgRens();
 
             Intent intent = new Intent(getApplicationContext(), game_page_lost.class);
@@ -225,10 +222,9 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     }
 
     /*
-    Method to retreive relevant data and cleanse the screen,
-    for when the user returns to the previous page
+    Method to retrieve relevant data and cleanse the screen,
+    for when the user returns to the previous page.
      */
-
     private void hentDataOgRens() {
         gættetOrd = gameLogic.getOrdet().substring(0, 1).toUpperCase() + gameLogic.getOrdet().substring(1);
         antalForkerte = gameLogic.getAntalForkerteBogstaver();
@@ -236,6 +232,15 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         gameLogic.nulstil();
         hangStatus.setImageResource(hangPic[0]);
         updateScreen();
+    }
 
+    /*
+    Method to reset the buttons of the app.
+    */
+    private void buttonReset() {
+        for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
+            gridLayoutButtons.getChildAt(i).setBackgroundColor(Color.BLACK);
+            gridLayoutButtons.getChildAt(i).setEnabled(true);
+        }
     }
 }

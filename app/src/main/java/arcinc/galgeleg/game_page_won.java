@@ -1,5 +1,6 @@
 package arcinc.galgeleg;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,8 @@ public class game_page_won extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_won);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         antalForkerte = getIntent().getIntExtra("AntalForkerte", 0);
         gættetOrd = getIntent().getStringExtra("GættetOrd");
