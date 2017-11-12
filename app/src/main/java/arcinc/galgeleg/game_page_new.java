@@ -59,7 +59,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_game_page_new);
 
         textViewInfo = (TextView) findViewById(R.id.textViewInfo);
-        textViewInfo.setText("Dit ord er: " + gameLogic.getSynligtOrd());
+        textViewInfo.setText("Dit ord er: \n" + gameLogic.getSynligtOrd());
 
         buttonA = (Button) findViewById(R.id.buttonA);
         buttonB = (Button) findViewById(R.id.buttonB);
@@ -294,7 +294,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     }
 
     private int findLetterInt() {
-        int value = (int) (Math.random() * 29 + 0);
+        int value = (int) (Math.random() * gridLayoutButtons.getChildCount() + 0);
 
         return value;
     }
