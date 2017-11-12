@@ -130,7 +130,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
         if (!sharedPrefs.getBoolean("tilladHints", true)) {
             buttonHint.setEnabled(false);
-            buttonHint.setBackgroundColor(Color.GRAY);
+            buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
         }
 
         buttonExit = (Button) findViewById(R.id.buttonExit);
@@ -164,7 +164,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 //Call to retrieve words from dr.dk
         } else if (v == buttonDRGet) {
             buttonDRGet.setEnabled(false);
-            buttonDRGet.setBackgroundColor(Color.GRAY);
+            buttonDRGet.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
 
             class asyncTaskDR extends AsyncTask {
                 @Override
@@ -213,7 +213,9 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                         gameLogic.setAntalForkerteBogstaver(-1);
                     }
 //Toast to tell the user if they have run out of hints
-                } else {
+                } else if (antalHints==0 || gameLogic.getAntalForkerteBogstaver()==5){
+                    buttonHint.setEnabled(false);
+                    buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
                     Toast.makeText(this, "Du har ikke flere hints tilbage", Toast.LENGTH_SHORT).show();
                 }
 
@@ -281,22 +283,22 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         for (int i = 0; i < gridLayoutButtons.getChildCount(); i++) {
-            gridLayoutButtons.getChildAt(i).setBackgroundColor(Color.BLACK);
+            gridLayoutButtons.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.colorButtonEnable));
             gridLayoutButtons.getChildAt(i).setEnabled(true);
         }
         if (!sharedPrefs.getBoolean("tilladHints", false)) {
             buttonHint.setEnabled(false);
-            buttonHint.setBackgroundColor(Color.GRAY);
+            buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
             antalHints = 0;
         } else {
             buttonHint.setEnabled(true);
-            buttonHint.setBackgroundColor(Color.BLACK);
+            buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonEnable));
             antalHints = 2;
         }
     }
 
     private int findLetterInt() {
-        int value = (int) (Math.random() * gridLayoutButtons.getChildCount() + 0);
+        int value = (int) (Math.random() * (gridLayoutButtons.getChildCount()-1) + 0);
 
         return value;
     }

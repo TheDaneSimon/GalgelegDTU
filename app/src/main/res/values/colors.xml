@@ -6,4 +6,6 @@
     <color name="colorPrimaryDark">#8f8f8f</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBaggrund">#9E9E9E</color>
+    <color name="colorButtonDisable">#898989</color>
+    <color name="colorButtonEnable">#000000</color>
 </resources>

@@ -90,7 +90,7 @@ onClick method to check which button was pressed.
             et.setHint("Gæt på et bogstav her!");
             et.setEnabled(true);
             buttonGuess.setEnabled(true);
-            buttonGuess.setBackgroundColor(Color.BLACK);
+            buttonGuess.setBackgroundColor(getResources().getColor(R.color.colorButtonEnable));
         }
         et.setText("");
         updateScreen();
@@ -114,7 +114,7 @@ Method to update the screen after the user's done interacting with the buttons.
             et.setText("Spillet er slut.");
             guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
             buttonGuess.setEnabled(false);
-            buttonGuess.setBackgroundColor(Color.GRAY);
+            buttonGuess.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
         }
         if (gameLogic.erSpilletTabt()){
             info.setText("Desværre! Du har tabt! \n Det rigtige ord er: " + gameLogic.getOrdet().substring(0,1).toUpperCase()+gameLogic.getOrdet().substring(1));
@@ -122,7 +122,7 @@ Method to update the screen after the user's done interacting with the buttons.
             et.setText("Spillet er slut.");
             guessedLetters.setText("Du gættede på: "+gameLogic.getBrugteBogstaver());
             buttonGuess.setEnabled(false);
-            buttonGuess.setBackgroundColor(Color.GRAY);
+            buttonGuess.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
         }
     }
 }
