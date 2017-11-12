@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorBaggrund">
+
+    <CheckBoxPreference
+        android:key="tilladHints"
+        android:title="Tillad hints i spillet?"
+        android:summary="Tillader spilleren at få et hint 2 gange i løbet af spillet."
+        android:defaultValue="true"/>
+
+    <EditTextPreference
+        android:key="spillerNavn"
+        android:title="Foretrukket navn"
+        android:summary="Det anvendte spillernavn"
+        android:defaultValue="Anonym"/>
+
+
+</PreferenceScreen>

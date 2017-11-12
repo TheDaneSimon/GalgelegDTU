@@ -25,7 +25,7 @@ public class game_page_won extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_game_won);
+        setContentView(R.layout.activity_game_won_page);
 
         antalForkerte = getIntent().getIntExtra("AntalForkerte", 0);
         gættetOrd = getIntent().getStringExtra("GættetOrd");

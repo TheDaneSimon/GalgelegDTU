@@ -21,6 +21,7 @@
         <activity android:name=".game_page_new"></activity>
         <activity android:name=".game_page_won"></activity>
         <activity android:name=".game_page_lost"></activity>
+        <activity android:name=".settings_page"></activity>
     </application>
 
 </manifest>

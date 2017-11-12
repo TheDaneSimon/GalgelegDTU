@@ -25,7 +25,7 @@ public class game_page_lost extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_game_lost);
+        setContentView(R.layout.activity_game_lost_page);
 
 
         antalForkerte = getIntent().getIntExtra("AntalForkerte", 0);

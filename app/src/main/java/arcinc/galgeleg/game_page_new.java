@@ -1,10 +1,12 @@
 package arcinc.galgeleg;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +14,6 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 
 /**
@@ -27,7 +27,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             buttonH, buttonI, buttonJ, buttonK, buttonL, buttonM, buttonN, buttonO,
             buttonP, buttonQ, buttonR, buttonS, buttonT, buttonU, buttonV, buttonW,
             buttonX, buttonY, buttonZ, buttonÆ, buttonØ, buttonÅ, buttonExit, buttonNewWord,
-            buttonDRGet;
+            buttonDRGet, buttonHint;
 
     private ImageView hangStatus;
 
@@ -35,7 +35,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
     private String gættetOrd;
 
-    private Integer antalForkerte;
+    private Integer antalForkerte, antalHints;
 
     Galgelogik gameLogic = new Galgelogik();
 
@@ -121,6 +121,18 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         buttonØ.setOnClickListener(this);
         buttonÅ.setOnClickListener(this);
 
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        buttonHint = (Button) findViewById(R.id.buttonHint);
+        buttonHint.setOnClickListener(this);
+        antalHints = 2;
+        buttonHint.setText("Hints: "+antalHints);
+
+        if(!sharedPrefs.getBoolean("tilladHints",true)){
+            buttonHint.setEnabled(false);
+            buttonHint.setBackgroundColor(Color.GRAY);
+        }
+
         buttonExit = (Button) findViewById(R.id.buttonExit);
         buttonExit.setOnClickListener(this);
         buttonExit.setText("Afslut spil");
@@ -178,19 +190,44 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
         } else if (v == buttonNewWord) {
             gameLogic.nulstil();
             buttonReset();
+
         } else {
             Button b = (Button) v;
-            gameLogic.gætBogstav(b.getText().toString().toLowerCase());
-            b.setEnabled(false);
-            if (gameLogic.getOrdet().contains(b.getText().toString().toLowerCase())) {
-                b.setBackgroundColor(getResources().getColor(R.color.grønKorrekt));
+            if (b.getText().toString().length() != 1) {
+                int letterInt = findLetterInt();
+                b = (Button) gridLayoutButtons.getChildAt(letterInt);
+                if (!gameLogic.getBrugteBogstaver().contains(b.getText().toString().toLowerCase()) && antalHints > 0) {
+                    gameLogic.gætBogstav(b.getText().toString().toLowerCase());
+                    if (gameLogic.getOrdet().contains(b.getText().toString().toLowerCase())) {
+                        b.setBackgroundColor(getResources().getColor(R.color.grønKorrekt));
+                    } else {
+                        b.setBackgroundColor(getResources().getColor(R.color.rødForkert));
+                    }
+                    Toast.makeText(this, "Gættede på bogstavet: " + b.getText().toString().toLowerCase(), Toast.LENGTH_SHORT).show();
+                    if (antalHints != 0) {
+                        antalHints = antalHints - 1;
+                    }
+                    if (gameLogic.getAntalForkerteBogstaver() != 0) {
+                        gameLogic.setAntalForkerteBogstaver(1);
+                    }
+
+                } else {
+                    Toast.makeText(this, "Du har ikke flere hints tilbage", Toast.LENGTH_SHORT).show();
+                }
+
+
             } else {
-                b.setBackgroundColor(getResources().getColor(R.color.rødForkert));
+                gameLogic.gætBogstav(b.getText().toString().toLowerCase());
+                b.setEnabled(false);
+                if (gameLogic.getOrdet().contains(b.getText().toString().toLowerCase())) {
+                    b.setBackgroundColor(getResources().getColor(R.color.grønKorrekt));
+                } else {
+                    b.setBackgroundColor(getResources().getColor(R.color.rødForkert));
+                }
             }
         }
         updateScreen();
     }
-
 
     /*
     Method to update the screen after the user's done interacting with the buttons.
@@ -218,6 +255,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             intent.putExtra("GættetOrd", gættetOrd);
             startActivity(intent);
         }
+
+        buttonHint.setText("Hints: "+antalHints);
     }
 
     /*
@@ -241,5 +280,14 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             gridLayoutButtons.getChildAt(i).setBackgroundColor(Color.BLACK);
             gridLayoutButtons.getChildAt(i).setEnabled(true);
         }
+        buttonHint.setEnabled(true);
+        buttonHint.setBackgroundColor(Color.BLACK);
+        antalHints=2;
+    }
+
+    private int findLetterInt() {
+        int value = (int) (Math.random() * 29 + 0);
+
+        return value;
     }
 }

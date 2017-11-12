@@ -5,4 +5,5 @@
     <color name="colorPrimary">#bababa</color>
     <color name="colorPrimaryDark">#8f8f8f</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorBaggrund">#9E9E9E</color>
 </resources>
