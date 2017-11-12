@@ -124,8 +124,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
         buttonHint = (Button) findViewById(R.id.buttonHint);
         buttonHint.setOnClickListener(this);
-        buttonHint.setText("Hints: " + antalHints);
         antalHints = 2;
+        buttonHint.setText("Hints: "+antalHints);
 
         if (!sharedPrefs.getBoolean("tilladHints", true)) {
             buttonHint.setEnabled(false);
@@ -195,17 +195,17 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 //Call to perform an action, depending on if the user clicks a letter, or the Hint button
         } else {
             Button b = (Button) v;
-            if (b.getText().toString() == "Hint") {
+            if (b.getText().toString().length() != 1) {
                 int letterInt = findLetterInt();
                 b = (Button) gridLayoutButtons.getChildAt(letterInt);
-                if (!gameLogic.getBrugteBogstaver().contains(b.getText().toString().toLowerCase()) && antalHints > 0) {
+                while (!gameLogic.getBrugteBogstaver().contains(b.getText().toString().toLowerCase()) && antalHints > 0) {
                     gameLogic.gætBogstav(b.getText().toString().toLowerCase());
                     if (gameLogic.getOrdet().contains(b.getText().toString().toLowerCase())) {
                         b.setBackgroundColor(getResources().getColor(R.color.grønKorrekt));
                     } else {
                         b.setBackgroundColor(getResources().getColor(R.color.rødForkert));
                     }
-                    Toast.makeText(this, "Gættede på bogstavet: " + b.getText().toString().toLowerCase(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Gættede på bogstavet: " + b.getText().toString() + ".", Toast.LENGTH_SHORT).show();
                     if (antalHints != 0) {
                         antalHints = antalHints - 1;
                     }
@@ -213,10 +213,10 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                         gameLogic.setAntalForkerteBogstaver(-1);
                     }
 //Toast to tell the user if they have run out of hints
-                } else if (antalHints == 0 || gameLogic.getAntalForkerteBogstaver() == 5) {
+                } if (antalHints == 0 || gameLogic.getAntalForkerteBogstaver() == 5) {
                     buttonHint.setEnabled(false);
                     buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
-                    Toast.makeText(this, "Du har ikke flere hints tilbage", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Du har ikke flere hints tilbage!", Toast.LENGTH_SHORT).show();
                 }
 
 
