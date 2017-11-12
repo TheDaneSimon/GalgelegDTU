@@ -3,7 +3,6 @@ package arcinc.galgeleg;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -125,8 +124,8 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 
         buttonHint = (Button) findViewById(R.id.buttonHint);
         buttonHint.setOnClickListener(this);
-        antalHints = 2;
         buttonHint.setText("Hints: " + antalHints);
+        antalHints = 2;
 
         if (!sharedPrefs.getBoolean("tilladHints", true)) {
             buttonHint.setEnabled(false);
@@ -172,6 +171,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                     try {
                         gameLogic.hentOrdFraDr();
                     } catch (Exception e) {
+                        Toast.makeText(game_page_new.this, "Det lykkedes ikke at hente ord fra hjemmeside", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                     return null;
@@ -195,7 +195,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
 //Call to perform an action, depending on if the user clicks a letter, or the Hint button
         } else {
             Button b = (Button) v;
-            if (b.getText().toString().length() != 1) {
+            if (b.getText().toString() == "Hint") {
                 int letterInt = findLetterInt();
                 b = (Button) gridLayoutButtons.getChildAt(letterInt);
                 if (!gameLogic.getBrugteBogstaver().contains(b.getText().toString().toLowerCase()) && antalHints > 0) {
@@ -213,7 +213,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                         gameLogic.setAntalForkerteBogstaver(-1);
                     }
 //Toast to tell the user if they have run out of hints
-                } else if (antalHints==0 || gameLogic.getAntalForkerteBogstaver()==5){
+                } else if (antalHints == 0 || gameLogic.getAntalForkerteBogstaver() == 5) {
                     buttonHint.setEnabled(false);
                     buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
                     Toast.makeText(this, "Du har ikke flere hints tilbage", Toast.LENGTH_SHORT).show();
@@ -286,6 +286,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
             gridLayoutButtons.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.colorButtonEnable));
             gridLayoutButtons.getChildAt(i).setEnabled(true);
         }
+
         if (!sharedPrefs.getBoolean("tilladHints", false)) {
             buttonHint.setEnabled(false);
             buttonHint.setBackgroundColor(getResources().getColor(R.color.colorButtonDisable));
@@ -298,8 +299,9 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     }
 
     private int findLetterInt() {
-        int value = (int) (Math.random() * (gridLayoutButtons.getChildCount()-1) + 0);
+        int value = (int) (Math.random() * (gridLayoutButtons.getChildCount() - 1) + 0);
 
         return value;
     }
+
 }
