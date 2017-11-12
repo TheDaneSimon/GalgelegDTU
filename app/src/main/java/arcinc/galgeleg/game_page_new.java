@@ -158,9 +158,10 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+//Call to exit the current activity
         if (v == buttonExit) {
             finish();
-
+//Call to retrieve words from dr.dk
         } else if (v == buttonDRGet) {
             buttonDRGet.setEnabled(false);
             buttonDRGet.setBackgroundColor(Color.GRAY);
@@ -186,6 +187,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                 }
             }
             new asyncTaskDR().execute();
+
 //Call to retrieve new word using gameLogic.nulstil() call. Resets all buttons afterwards.
         } else if (v == buttonNewWord) {
             gameLogic.nulstil();
@@ -208,7 +210,7 @@ public class game_page_new extends AppCompatActivity implements View.OnClickList
                         antalHints = antalHints - 1;
                     }
                     if (gameLogic.getAntalForkerteBogstaver() != 0) {
-                        gameLogic.setAntalForkerteBogstaver(1);
+                        gameLogic.setAntalForkerteBogstaver(-1);
                     }
 //Toast to tell the user if they have run out of hints
                 } else {

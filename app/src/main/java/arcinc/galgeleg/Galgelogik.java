@@ -38,7 +38,7 @@ public class Galgelogik {
   }
 
   public int setAntalForkerteBogstaver(int correction){
-    antalForkerteBogstaver=antalForkerteBogstaver-correction;
+    antalForkerteBogstaver=antalForkerteBogstaver + correction;
     return antalForkerteBogstaver;
   }
 
