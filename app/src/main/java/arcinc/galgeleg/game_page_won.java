@@ -15,11 +15,11 @@ import android.widget.TextView;
 public class game_page_won extends AppCompatActivity implements View.OnClickListener {
 
 
-    Button buttonBack;
-    TextView textViewInfo;
-    ImageView imageViewHangPic;
-    int antalForkerte;
-    String gættetOrd;
+    private Button buttonBack;
+    private TextView textViewInfo;
+    private ImageView imageViewHangPic;
+    private int antalForkerte;
+    private String gættetOrd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
